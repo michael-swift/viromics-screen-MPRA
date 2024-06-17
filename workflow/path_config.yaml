@@ -1,0 +1,23 @@
+# Workflow configuration
+reference_fasta: "reference/TILE_mpra.fa"
+data_dir: "data"
+envs: "envs"
+base: "outputs"
+scripts: "scripts"
+tools: "tools"
+envs: 
+  bioinfo: "envs/bioinfo.yaml"
+dockers:
+  bwa: "quay.io/biocontainers/bwa:0.7.18--he4a0461_0"
+  samtools: "quay.io/biocontainers/samtools:1.20--h50ea8bc_0"
+  fastqc: "quay.io/biocontainers/fastqc:0.12.1--hdfd78af_0"
+samples:
+  - DNA_rep1
+  - DNA_rep2
+  - DNA_rep3
+  - DNA_rep4
+  - RNA_rep1
+  - RNA_rep2
+  - RNA_rep3
+  - RNA_rep4
+

@@ -1,0 +1,26 @@
+# Snakemake profile configuration
+snakemake:
+  cores: 9
+  use_docker: True
+  jobname: "{rulename}.{jobid}"
+  latency_wait: 15
+  rerun_incomplete: true
+  printshellcmds: true
+
+# Default resources
+default-resources:
+  - mem_mb=4000
+  - gpus=0
+  - time="04:00:00"
+  - threads=4
+  - disk_mb=500000
+
+# Other settings
+restart-times: 0
+rerun-triggers: mtime
+max-jobs-per-second: 10
+max-status-checks-per-second: 1
+local-cores: 9
+jobs: 100
+keep-going: true
+scheduler: greedy

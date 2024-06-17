@@ -1,0 +1,27 @@
+FROM continuumio/miniconda3
+
+# Install system dependencies
+RUN apt-get update && \
+    apt-get install -y \
+        wget \
+        build-essential \
+        zlib1g-dev \
+        libbz2-dev \
+        liblzma-dev \
+        libcurl4-gnutls-dev \
+        libssl-dev \
+        libncurses5-dev
+
+# Create a Conda environment
+COPY environment.yml .
+RUN conda env create -f environment.yml
+
+# Copy the entrypoint script
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
+# Set the entrypoint
+ENTRYPOINT ["/entrypoint.sh"]
+
+# Set the working directory
+WORKDIR /data

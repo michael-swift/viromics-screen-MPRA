@@ -1,0 +1,112 @@
+from pathlib import Path
+
+configfile: "path_config.yaml"
+
+workflow_dir = Path(workflow.basedir)
+
+reference_fasta = workflow_dir / config["reference_fasta"]
+data_dir = workflow_dir / config["data_dir"]
+samples = config["samples"]
+threads = config.get("threads", 4)
+work_dir = workflow_dir / "work"
+script_dir = workflow_dir / "scripts"
+work_dir.mkdir(parents=True, exist_ok=True)
+
+rule all:
+    input:
+        "work/results/merged_MPRA.tsv.gz"
+
+rule bwa2_index:
+    input:
+        fasta=reference_fasta,
+    output:
+        flag="work/bwa_index/TILE_mpra.fa.done.flag",
+    resources:
+        mem_mb=lambda wildcards, attempt: 8000 * attempt,
+    conda:
+        "envs/bioinfo.yaml"
+    shell:
+    # touching bc there are many output files
+        """
+        bwa-mem2 index {input.fasta}
+        touch {output.flag}
+        """
+rule bwa2_map:
+    input:
+        fastq=lambda wildcards: f"{data_dir}/{wildcards.sample}.fq.gz",
+        index_prefix=rules.bwa2_index.input.fasta,
+    output:
+        "work/sorted/{sample}.sorted.bam",
+    resources:
+        mem_mb=lambda wildcards, attempt: 8000 * attempt,
+    conda:
+        "envs/bioinfo.yaml"
+    params:
+        threads=threads
+    shell:
+        """
+        bwa-mem2 mem -t {params.threads} {input.index_prefix} {input.fastq} | \
+        samtools view -Sb - | \
+        samtools sort -o {output}
+        """
+
+rule count_reads:
+    input:
+        "work/sorted/{sample}.sorted.bam",
+    output:
+        "work/counts/{sample}.coverage.tsv.gz",
+    conda:
+        "envs/bioinfo.yaml"
+    log:
+        "work/logs/count_reads/{sample}.log"
+    shell:
+        """
+        samtools coverage {input} > {output}
+        """
+
+import pandas as pd
+
+rule aggregate_counts:
+    input:
+        expand("work/counts/{sample}.coverage.tsv.gz", sample=config["samples"]),
+    output:
+        "work/results/summary_read_counts.tsv.gz",
+    run:
+        import pandas as pd
+
+        count_data = []
+        for file in input:
+            sample_id = file.split("/")[-1].split(".")[0]
+            df = pd.read_csv(file, sep="\t")
+            df["sample_id"] = sample_id
+            count_data.append(df)
+
+        df_all = pd.concat(count_data, ignore_index=True)
+        # parse out the barcode of each oligo:
+        df_all["technical_replicate_barcode"] = df_all.loc[:,'#rname'].str.split('|', expand=True).iloc[:,-2]
+        df_all.rename(columns={'#rname': 'oligo_name'}, inplace=True)
+        df_all.to_csv(output[0], sep="\t", index=False, compression="gzip")
+
+rule reconstruct_MPRA:
+    input:
+        fasta="reference/TILE_mpra.fa",
+        plasmid="reference/reporter_plasmid.gb"
+    output:
+        "work/results/reconstructed_MPRA.tsv.gz",
+    conda:
+        "envs/bioinfo.yaml"
+    shell:
+        "python {script_dir}/reconstruct_viromic_sequence_mpra.py --plasmid {input.plasmid} --fasta_file {input.fasta} --output_file {output}"
+
+rule merge_MPRA:
+    input:
+        "work/results/summary_read_counts.tsv.gz",
+        "work/results/reconstructed_MPRA.tsv.gz"
+    output:
+        "work/results/merged_MPRA.tsv.gz"
+    run:
+        import pandas as pd
+        counts = pd.read_csv(input[0], sep="\t")
+        reconstructed = pd.read_csv(input[1], sep="\t")
+        merged = pd.merge(counts, reconstructed, on="oligo_name")
+        merged.to_csv(output[0], sep="\t", index=False, compression="gzip")

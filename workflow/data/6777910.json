@@ -1,0 +1,339 @@
+{
+  "access": {
+    "embargo": {
+      "active": false,
+      "reason": null
+    },
+    "files": "public",
+    "record": "public",
+    "status": "open"
+  },
+  "created": "2022-07-05T04:19:29.839690+00:00",
+  "custom_fields": {},
+  "deletion_status": {
+    "is_deleted": false,
+    "status": "P"
+  },
+  "files": {
+    "count": 9,
+    "enabled": true,
+    "entries": {
+      "DNA_rep1.fq.gz": {
+        "access": {
+          "hidden": false
+        },
+        "checksum": "md5:bc6a7dc1f9e50c836213414f7b76c33e",
+        "ext": "gz",
+        "id": "4c0ef3dc-253f-47c0-9182-3776499c70a4",
+        "key": "DNA_rep1.fq.gz",
+        "links": {
+          "content": "https://zenodo.org/api/records/6777910/files/DNA_rep1.fq.gz/content",
+          "self": "https://zenodo.org/api/records/6777910/files/DNA_rep1.fq.gz"
+        },
+        "metadata": null,
+        "mimetype": "application/gzip",
+        "size": 1407182615,
+        "storage_class": "L"
+      },
+      "DNA_rep2.fq.gz": {
+        "access": {
+          "hidden": false
+        },
+        "checksum": "md5:d73a6c9a5e7f4ac1602619e4d93aa01d",
+        "ext": "gz",
+        "id": "6eee0541-2119-4c2e-b827-caa8a1da57d6",
+        "key": "DNA_rep2.fq.gz",
+        "links": {
+          "content": "https://zenodo.org/api/records/6777910/files/DNA_rep2.fq.gz/content",
+          "self": "https://zenodo.org/api/records/6777910/files/DNA_rep2.fq.gz"
+        },
+        "metadata": null,
+        "mimetype": "application/gzip",
+        "size": 1293646655,
+        "storage_class": "L"
+      },
+      "DNA_rep3.fq.gz": {
+        "access": {
+          "hidden": false
+        },
+        "checksum": "md5:da1575e5a51fff07a2170f60dc8f1fc8",
+        "ext": "gz",
+        "id": "5386f320-8ff0-4daa-9383-87a27329d050",
+        "key": "DNA_rep3.fq.gz",
+        "links": {
+          "content": "https://zenodo.org/api/records/6777910/files/DNA_rep3.fq.gz/content",
+          "self": "https://zenodo.org/api/records/6777910/files/DNA_rep3.fq.gz"
+        },
+        "metadata": null,
+        "mimetype": "application/gzip",
+        "size": 1304107626,
+        "storage_class": "L"
+      },
+      "DNA_rep4.fq.gz": {
+        "access": {
+          "hidden": false
+        },
+        "checksum": "md5:1532257ddb8315386216480782ab39cd",
+        "ext": "gz",
+        "id": "b639b42f-b287-407b-b9e3-9b6b599fccfb",
+        "key": "DNA_rep4.fq.gz",
+        "links": {
+          "content": "https://zenodo.org/api/records/6777910/files/DNA_rep4.fq.gz/content",
+          "self": "https://zenodo.org/api/records/6777910/files/DNA_rep4.fq.gz"
+        },
+        "metadata": null,
+        "mimetype": "application/gzip",
+        "size": 1405504005,
+        "storage_class": "L"
+      },
+      "RNA_rep1.fq.gz": {
+        "access": {
+          "hidden": false
+        },
+        "checksum": "md5:5cf2794234498224d7c6c0786db6a199",
+        "ext": "gz",
+        "id": "1210c0d0-ff37-4ea6-9dd9-f9498e9ac722",
+        "key": "RNA_rep1.fq.gz",
+        "links": {
+          "content": "https://zenodo.org/api/records/6777910/files/RNA_rep1.fq.gz/content",
+          "self": "https://zenodo.org/api/records/6777910/files/RNA_rep1.fq.gz"
+        },
+        "metadata": null,
+        "mimetype": "application/gzip",
+        "size": 1286362892,
+        "storage_class": "L"
+      },
+      "RNA_rep2.fq.gz": {
+        "access": {
+          "hidden": false
+        },
+        "checksum": "md5:c343dff98912db2b08a49fa9b6d23141",
+        "ext": "gz",
+        "id": "d3b54d7f-e08d-45b6-9212-24cbbc388c41",
+        "key": "RNA_rep2.fq.gz",
+        "links": {
+          "content": "https://zenodo.org/api/records/6777910/files/RNA_rep2.fq.gz/content",
+          "self": "https://zenodo.org/api/records/6777910/files/RNA_rep2.fq.gz"
+        },
+        "metadata": null,
+        "mimetype": "application/gzip",
+        "size": 1325622556,
+        "storage_class": "L"
+      },
+      "RNA_rep3.fq.gz": {
+        "access": {
+          "hidden": false
+        },
+        "checksum": "md5:4a78191d7bacaeb96b2b6898f4124678",
+        "ext": "gz",
+        "id": "24d59215-e413-4a90-9dd4-c58e35b00e0d",
+        "key": "RNA_rep3.fq.gz",
+        "links": {
+          "content": "https://zenodo.org/api/records/6777910/files/RNA_rep3.fq.gz/content",
+          "self": "https://zenodo.org/api/records/6777910/files/RNA_rep3.fq.gz"
+        },
+        "metadata": null,
+        "mimetype": "application/gzip",
+        "size": 1969174493,
+        "storage_class": "L"
+      },
+      "RNA_rep4.fq.gz": {
+        "access": {
+          "hidden": false
+        },
+        "checksum": "md5:15c2e0fdbcc7805540f09df5b46fb6d9",
+        "ext": "gz",
+        "id": "8a2ae108-1b54-4846-8015-e58e1d8d9210",
+        "key": "RNA_rep4.fq.gz",
+        "links": {
+          "content": "https://zenodo.org/api/records/6777910/files/RNA_rep4.fq.gz/content",
+          "self": "https://zenodo.org/api/records/6777910/files/RNA_rep4.fq.gz"
+        },
+        "metadata": null,
+        "mimetype": "application/gzip",
+        "size": 1202971591,
+        "storage_class": "L"
+      },
+      "plasmid.fq.gz": {
+        "access": {
+          "hidden": false
+        },
+        "checksum": "md5:5e82e336c8f0cd78adcaf7f7ca31d549",
+        "ext": "gz",
+        "id": "ddfd0a6f-a82c-447d-9218-08409f376970",
+        "key": "plasmid.fq.gz",
+        "links": {
+          "content": "https://zenodo.org/api/records/6777910/files/plasmid.fq.gz/content",
+          "self": "https://zenodo.org/api/records/6777910/files/plasmid.fq.gz"
+        },
+        "metadata": null,
+        "mimetype": "application/gzip",
+        "size": 1715014321,
+        "storage_class": "L"
+      }
+    },
+    "order": [],
+    "total_bytes": 12909586754
+  },
+  "id": "6777910",
+  "is_draft": false,
+  "is_published": true,
+  "links": {
+    "access": "https://zenodo.org/api/records/6777910/access",
+    "access_grants": "https://zenodo.org/api/records/6777910/access/grants",
+    "access_links": "https://zenodo.org/api/records/6777910/access/links",
+    "access_request": "https://zenodo.org/api/records/6777910/access/request",
+    "access_users": "https://zenodo.org/api/records/6777910/access/users",
+    "archive": "https://zenodo.org/api/records/6777910/files-archive",
+    "archive_media": "https://zenodo.org/api/records/6777910/media-files-archive",
+    "communities": "https://zenodo.org/api/records/6777910/communities",
+    "communities-suggestions": "https://zenodo.org/api/records/6777910/communities-suggestions",
+    "doi": "https://doi.org/10.5281/zenodo.6777910",
+    "draft": "https://zenodo.org/api/records/6777910/draft",
+    "files": "https://zenodo.org/api/records/6777910/files",
+    "latest": "https://zenodo.org/api/records/6777910/versions/latest",
+    "latest_html": "https://zenodo.org/records/6777910/latest",
+    "media_files": "https://zenodo.org/api/records/6777910/media-files",
+    "parent": "https://zenodo.org/api/records/6777909",
+    "parent_doi": "https://zenodo.org/doi/10.5281/zenodo.6777909",
+    "parent_html": "https://zenodo.org/records/6777909",
+    "requests": "https://zenodo.org/api/records/6777910/requests",
+    "reserve_doi": "https://zenodo.org/api/records/6777910/draft/pids/doi",
+    "self": "https://zenodo.org/api/records/6777910",
+    "self_doi": "https://zenodo.org/doi/10.5281/zenodo.6777910",
+    "self_html": "https://zenodo.org/records/6777910",
+    "self_iiif_manifest": "https://zenodo.org/api/iiif/record:6777910/manifest",
+    "self_iiif_sequence": "https://zenodo.org/api/iiif/record:6777910/sequence/default",
+    "versions": "https://zenodo.org/api/records/6777910/versions"
+  },
+  "media_files": {
+    "count": 0,
+    "enabled": false,
+    "entries": {},
+    "order": [],
+    "total_bytes": 0
+  },
+  "metadata": {
+    "creators": [
+      {
+        "affiliations": [
+          {
+            "name": "Seoul National University"
+          }
+        ],
+        "person_or_org": {
+          "family_name": "Jenny J. Seo",
+          "identifiers": [
+            {
+              "identifier": "0000-0001-8849-9819",
+              "scheme": "orcid"
+            }
+          ],
+          "name": "Jenny J. Seo",
+          "type": "personal"
+        }
+      },
+      {
+        "affiliations": [
+          {
+            "name": "Seoul National University"
+          }
+        ],
+        "person_or_org": {
+          "family_name": "Soo-Jin Jung",
+          "name": "Soo-Jin Jung",
+          "type": "personal"
+        }
+      },
+      {
+        "affiliations": [
+          {
+            "name": "Seoul National University"
+          }
+        ],
+        "person_or_org": {
+          "family_name": "V. Narry Kim",
+          "name": "V. Narry Kim",
+          "type": "personal"
+        }
+      }
+    ],
+    "description": "<p>RNA stability MPRA (3 replicates)</p>",
+    "publication_date": "2023-12-31",
+    "publisher": "Zenodo",
+    "resource_type": {
+      "id": "publication-article",
+      "title": {
+        "de": "Zeitschriftenartikel",
+        "en": "Journal article"
+      }
+    },
+    "rights": [
+      {
+        "description": {
+          "en": "The Creative Commons Attribution license allows re-distribution and re-use of a licensed work on the condition that the creator is appropriately credited."
+        },
+        "icon": "cc-by-icon",
+        "id": "cc-by-4.0",
+        "props": {
+          "scheme": "spdx",
+          "url": "https://creativecommons.org/licenses/by/4.0/legalcode"
+        },
+        "title": {
+          "en": "Creative Commons Attribution 4.0 International"
+        }
+      }
+    ],
+    "title": "RNA stability MPRA (4 replicates)"
+  },
+  "parent": {
+    "access": {
+      "owned_by": {
+        "user": "266605"
+      }
+    },
+    "communities": {},
+    "id": "6777909",
+    "pids": {
+      "doi": {
+        "client": "datacite",
+        "identifier": "10.5281/zenodo.6777909",
+        "provider": "datacite"
+      }
+    }
+  },
+  "pids": {
+    "doi": {
+      "client": "datacite",
+      "identifier": "10.5281/zenodo.6777910",
+      "provider": "datacite"
+    },
+    "oai": {
+      "identifier": "oai:zenodo.org:6777910",
+      "provider": "oai"
+    }
+  },
+  "revision_id": 5,
+  "stats": {
+    "all_versions": {
+      "data_volume": 272692791015.0,
+      "downloads": 189,
+      "unique_downloads": 135,
+      "unique_views": 158,
+      "views": 176
+    },
+    "this_version": {
+      "data_volume": 257185995673.0,
+      "downloads": 178,
+      "unique_downloads": 133,
+      "unique_views": 155,
+      "views": 173
+    }
+  },
+  "status": "published",
+  "updated": "2023-05-31T02:26:59.775726+00:00",
+  "versions": {
+    "index": 1,
+    "is_latest": true
+  }
+}

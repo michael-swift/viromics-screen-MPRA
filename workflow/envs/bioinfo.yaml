@@ -1,0 +1,20 @@
+name: bioinfo
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - snakemake
+  - biopython
+  - bwa-mem2
+  - fastqc
+  - python
+  - samtools=1.20
+  - bedtools
+  - pandas
+  - numpy
+  - scipy
+  - scikit-learn
+  - matplotlib
+  - bowtie2
+prefix: /home/michaelswift/miniconda3/envs/bioinfo
