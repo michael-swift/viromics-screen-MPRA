@@ -23,14 +23,6 @@ if [ $# -eq 0 ]
   then
     # Dry run snakemake
     snakemake -s $SNAKEFILE $TARGET --use-conda --rerun-incomplete -n --keep-going --rerun-triggers mtime
-
-elif [ $1 = "unlock" ]
-    then
-        snakemake -s $SNAKEFILE $TARGET -F --rerun-incomplete --unlock --cores 1
-
-elif [ $1 = "touch" ]
-    then
-        snakemake -s $SNAKEFILE $TARGET -F --rerun-incomplete --unlock --touch --cores 1
     
 elif [ $1 = "dry" ]
     then
@@ -38,25 +30,12 @@ elif [ $1 = "dry" ]
     echo 'running snakemake'
     snakemake --profile profile/ -n
 
+## Use this to run the workflow
 elif [ $1 = "profile" ]
     then
   # Run snakemake
     echo 'running snakemake'
     snakemake --verbose --profile profile/ --software-deployment-method conda apptainer
-
-elif [ $1 = "sbatch" ]
-    # Run snakemake as an SBATCH job, good for long workflows (obviously only works on slurm)
-    then
-    sbatch \
-        --ntasks=1 \
-        --cpus-per-task=1 \
-        --mem=8000 \
-        --mail-user=$EMAIL \
-        --time 4-0 \
-        -p quake \
-        -o $SBATCH_LOGFILE \
-        -e $SBATCH_LOGFILE_ERR \
-        run_snake.sh profile
 
 else
     echo "wrong option"
