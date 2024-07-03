@@ -28,14 +28,14 @@ elif [ $1 = "dry" ]
     then
   # Run snakemake
     echo 'running snakemake'
-    snakemake --profile profile/ -n
+    snakemake --conda-frontend conda --profile profile/ -n
 
 ## Use this to run the workflow
 elif [ $1 = "profile" ]
     then
   # Run snakemake
     echo 'running snakemake'
-    snakemake --verbose --profile profile/ --software-deployment-method conda apptainer
+    snakemake --conda-frontend conda --verbose --profile profile/ --software-deployment-method conda apptainer
 
 else
     echo "wrong option"
